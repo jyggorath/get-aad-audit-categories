@@ -10,6 +10,12 @@ else:
 	searchterm = argv[1]
 
 
+if searchterm in ['-h', '--help', '-?']:
+	print('Usage: %s [search term]')
+	print('  where [search term] is an optional search term to filter the category names. Case insensitive substring matching.')
+	exit()
+
+
 url = 'https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/main/articles/active-directory/reports-monitoring/reference-audit-activities.md'
 response = get(url)
 if not response.ok:
